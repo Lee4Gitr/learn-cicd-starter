@@ -52,7 +52,7 @@ func Test_GetAPIKey_AuthHeaderIsCorrect(t *testing.T) {
 	headerMock.Add("Authorization", fmt.Sprintf("ApiKey %v", TestHeaderValue))
 	//Act
 	got, _ := GetAPIKey(headerMock)
-	want := "AnythingElse"
+	want := TestHeaderValue
 	//Assert
 	if !reflect.DeepEqual(got, want) {
 		t.Fatalf("expected: %v, got: %v", want, got)
